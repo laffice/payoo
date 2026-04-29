@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payoo</title>
+  <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<style>
+  *{
+    font-family: "Outfit", sans-serif;
+  }
+</style>
+</head>
+<body class="min-h-screen max-w-md bg-base-200 mx-auto">
+  <div class="w-[263px] mx-auto pt-[210px]">
+    <img src="./assets/Logo-full.png " alt="">
+  </div>
+  <div class="pt-[30px]">
+    <fieldset class="fieldset bg-base-100 border-base-200 rounded-box w-xs border p-4 w-full shadow-lg mx-auto">
+  <!-- <legend class="fieldset-legend">Login</legend> -->
+
+  <label class="label font-extrabold pt-[20px] text-lg">Mobile Number</label>
+  <input  id="input-number"  type="text" maxlength="11" minlength="11" class="input rounded-full w-[350px]"  placeholder="Your 11 Digit Phone Number" />
+  <br>
+  
+
+  <label class="label font-extrabold text-lg">4 Digit pin</label>
+  <input id="input-pin" type="password" maxlength="4" minlength="4" class="input rounded-full w-[350px]" placeholder="Your 4 Degit pin" />
+
+  <button id="login" class="btn btn-primary rounded-full mt-4">Login</button>
+</fieldset>
+  </div>
+  <script src="./scripts/login.js"></script>
+</body>
+</html>
