@@ -7,7 +7,7 @@ const pin = inputPin.value ;
 // console.log(number, pin); 
 if(number === "01234567890" && pin ==="1234"){
 
-    alert('login success')
+    window.location.assign("homepage.html")
 }
 else{
     alert('login failed')
