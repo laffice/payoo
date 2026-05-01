@@ -41,6 +41,10 @@
         </a>
     </nav>
     <hr class="border-base-300">
+
+    <!-- Navigation Buttons -->
+
+
     <section class="mt-[25px] ml-[15px] mx-auto pb-[25px] ">
         <div>
             <p class="text-2xl font-bold ">Welcome to Pay<span class="text-[#7460FF]">oo</span></p>
@@ -49,32 +53,32 @@
                 Cash-out charge is low and </p>
         </div>
         <div class="mt-[50px] grid grid-cols-3 gap-[15px] mx-auto">
-            <button
+            <button onclick="showOnly('add-money')"
                 class="w-[120px] h-[100px] btn text-xs border border-base-300  rounded-lg p-4 flex flex-col items-center gap-4">
                 <img src="./assets/opt-1.png" alt="Add Money">
                 <p>Add Money</p>
             </button>
-            <button
+            <button onclick="showOnly('cash-out')"
                 class="w-[120px] h-[100px] btn border border-base-300  text-xs   rounded-lg p-4 flex flex-col items-center gap-4">
                 <img src="./assets/opt-2.png" alt="Add Money">
                 <p>Cash-Out</p>
             </button>
-            <button
+            <button onclick="showOnly('transfer-money')"
                 class="w-[120px] h-[100px] btn border border-base-300 w-[120px]   text-xs rounded-lg p-4 flex flex-col items-center gap-4">
                 <img src="./assets/opt-3.png" alt="Add Money">
                 <p>Transfer Money </p>
             </button>
-            <button
+            <button onclick="showOnly('get-bonus')"
                 class="w-[120px] h-[100px]  btn border border-base-300  w-[120px]  text-xs rounded-lg p-4 flex flex-col items-center gap-4">
                 <img src="./assets/opt-4.png" alt="Add Money">
                 <p>Get Bonus</p>
             </button>
-            <button
+            <button onclick="showOnly('pay-bills')"
                 class="w-[120px] h-[100px] btn border border-base-300  w-[120px] text-xs rounded-lg p-4 flex flex-col items-center gap-4">
                 <img src="./assets/opt-5.png" alt="Add Money">
                 <p>Pay Bill</p>
             </button>
-            <button
+            <button onclick="showOnly('transactions')"
                 class="w-[120px] h-[100px] btn border border-base-300 w-[120px]   text-xs rounded-lg p-4 flex flex-col items-center gap-4">
                 <img src="./assets/opt-6.png" alt="Add Money">
                 <p>Transactions </p>
@@ -84,7 +88,11 @@
 
     </section>
 
-    <section class="px-[10px] py-[30px] bg-base-200 rounded-lg">
+
+    <!-- latest payment history -->
+
+
+    <section class="px-[10px] py-[30px] bg-base-200 rounded-lg hidden">
          <div class="flex justify-between">
             <p class="font-bold text-xl">Latest Payments</p>
             <p class="font-light"><a href="">View All </a></p>
@@ -143,12 +151,13 @@
                 </div>
             </div>
          </div>
-
-
-
     </section>
 
-    <section>
+
+<!-- Add Money  -->
+
+
+    <section id="add-money" class="hidden">
         <div>
             <div>
                 <h1 class="text-lg font-bold pl-[10px] pt-[30px]">Add Money</h1>
@@ -187,7 +196,14 @@
         </div>
 
     </section>
-    <section>
+
+
+
+    <!-- cash out -->
+
+
+
+    <section id="cash-out" class="hidden">
         <div>
             <div>
                 <h1 class="text-lg font-bold pl-[10px] pt-[30px]">Cash Out</h1>
@@ -221,7 +237,11 @@
 
     </section>
     
-    <section>
+
+    <!-- Transfer Money -->
+
+
+    <section id="transfer-money" class="hidden">
         <div>
             <div>
                 <h1 class="text-lg font-bold pl-[10px] pt-[30px]">Transfer Money</h1>
@@ -255,7 +275,11 @@
 
     </section>
     
-    <section>
+
+    <!-- Pay Bills   -->
+
+
+    <section id="pay-bills" class="hidden">
         <div>
             <div>
                 <h1 class="text-lg font-bold pl-[10px] pt-[30px]">Pay Bills</h1>
@@ -295,7 +319,11 @@
 
     </section>
 
-       <section>
+
+         <!-- Get Bonus -->
+
+
+       <section id="get-bonus" class="hidden">
         <div>
             <div>
                 <h1 class="text-lg font-bold pl-[10px] pt-[30px]">Get Bonus</h1>
@@ -322,6 +350,8 @@
         </div>
 
     </section>
+
+    <script src="./scripts/macine.js"></script>
 
 </body>
 
