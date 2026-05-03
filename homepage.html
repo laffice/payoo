@@ -21,17 +21,18 @@
             font-family: "Outfit", sans-serif;
             /* font style */
         }
+        
     </style>
 </head>
 
 <body class="min-h-screen max-w-md bg-base-100 mx-auto">
-    <nav class="  pb-[25px] flex pt-[10px] pl-[15px] justify-between space-x-4 space-y-4 ">
+    <nav class="  pb-[25px] flex pt-[10px] pl-[15px] justify-between space-x-4 space-y-4 sticky top-0  bg-base-100 z-10">
         <div class="flex  gap-4">
             <div>
                 <img src="./assets/logo.png" alt="Payoo Logo" class="w-[60px] h-[48px]">
             </div>
             <div>
-                <p class="font-bold text-lg">$45000</p>
+                <p  class="font-bold text-lg">$<span id="balance">45000</span></p>
                 <p class="font-light">Available balance</p>
             </div>
         </div>
@@ -169,7 +170,7 @@
                     class="fieldset bg-base-100 border-base-200 rounded-box w-xs border p-4 w-full shadow-lg mx-auto">
                     <!-- <legend class="fieldset-legend">Login</legend> -->
                     <p class="text-lg font-semibold">Select Bank</p>
-                    <select class="select appearance-none w-full rounded-full">
+                    <select id="bank-select" class="select appearance-none w-full rounded-full">
                         <option disabled selected>Select Bank</option>
                         <option>DBBL</option>
                         <option>UCB</option>
@@ -177,20 +178,20 @@
                         <option>IBBL</option>
                     </select>
                     <label class="label font-extrabold pt-[20px] text-lg">Bank Account Number</label>
-                    <input id="input-account" type="text" maxlength="11" minlength="11"
-                        class="input rounded-full w-[350px]" placeholder="Your 11 Digit Phone Number" />
+                    <input id="input-bank-account" type="text" maxlength="11" minlength="11"
+                        class="input rounded-full w-[350px]" placeholder="Your 11 Digit Bank Account Number" />
 
                     <label class="label font-extrabold pt-[20px] text-lg">Amount to Add</label>
-                    <input id="input-amount" type="text" maxlength="11" minlength="11"
-                        class="input rounded-full w-[350px]" placeholder="Your 11 Digit Phone Number" />
+                    <input id="input-add-amount" type="text" maxlength="8" 
+                        class="input rounded-full w-[350px]" placeholder="Input Amount of money to add." />
                     <br>
 
 
                     <label class="label font-extrabold text-lg">4 Digit pin</label>
-                    <input id="input-pin" type="password" maxlength="4" minlength="4"
+                    <input id="input-add-pin" type="password" maxlength="4" minlength="4"
                         class="input rounded-full w-[350px]" placeholder="Your 4 Degit pin" />
 
-                    <button id="login" class="btn btn-primary rounded-full mt-4">Add Money</button>
+                    <button id="add-money-btn" class="btn btn-primary rounded-full mt-4">Add Money</button>
                 </fieldset>
             </div>
         </div>
@@ -217,20 +218,20 @@
                     
                   
                     <label class="label font-extrabold pt-[20px] text-lg">Agent Number</label>
-                    <input id="input-agent" type="text" maxlength="11" minlength="11"
+                    <input id="input-agentNumber" type="text" maxlength="11" minlength="11"
                         class="input rounded-full w-[350px]" placeholder="Your 11 Digit Phone Number" />
 
                     <label class="label font-extrabold pt-[20px] text-lg">Amount to Cash Out</label>
-                    <input id="input-amount" type="text" maxlength="11" minlength="11"
-                        class="input rounded-full w-[350px]" placeholder="Your 11 Digit Phone Number" />
+                    <input id="input-cashoutAmount" type="text" 
+                        class="input rounded-full w-[350px]" placeholder="Enter the amount to cash out" />
                     <br>
 
 
                     <label class="label font-extrabold text-lg">Pin Number</label>
-                    <input id="input-pin" type="password" maxlength="4" minlength="4"
+                    <input id="cashout-pin" type="password" maxlength="4" minlength="4"
                         class="input rounded-full w-[350px]" placeholder="Your 4 Degit pin" />
 
-                    <button id="login" class="btn btn-primary rounded-full mt-4">Cash Out</button>
+                    <button id="cash-out-btn" class="btn btn-primary rounded-full mt-4">Cash Out</button>
                 </fieldset>
             </div>
         </div>
@@ -255,20 +256,20 @@
                     
                   
                     <label class="label font-extrabold pt-[20px] text-lg">User Account Number</label>
-                    <input id="input-agent" type="text" maxlength="11" minlength="11"
-                        class="input rounded-full w-[350px]" placeholder="Your 11 Digit Phone Number" />
+                    <input id="input-transAcc" type="text" maxlength="11" minlength="11"
+                        class="input rounded-full w-[350px]" placeholder=" 11 Digit Phone Number" />
 
                     <label class="label font-extrabold pt-[20px] text-lg">Amount to Transfer</label>
-                    <input id="input-amount" type="text" maxlength="11" minlength="11"
-                        class="input rounded-full w-[350px]" placeholder="Your 11 Digit Phone Number" />
+                    <input id="input-trans-amount" type="text" maxlength="11" minlength="11"
+                        class="input rounded-full w-[350px]" placeholder="Your transfer amount" />
                     <br>
 
 
                     <label class="label font-extrabold text-lg">Pin Number</label>
-                    <input id="input-pin" type="password" maxlength="4" minlength="4"
+                    <input id="input-trans-pin" type="password" maxlength="4" minlength="4"
                         class="input rounded-full w-[350px]" placeholder="Your 4 Degit pin" />
 
-                    <button id="login" class="btn btn-primary rounded-full mt-4">Transfer Money</button>
+                    <button id="transfer-money-btn" class="btn btn-primary rounded-full mt-4">Transfer Money</button>
                 </fieldset>
             </div>
         </div>
@@ -291,7 +292,7 @@
                     class="fieldset bg-base-100 border-base-200 rounded-box w-xs border p-4 w-full shadow-lg mx-auto">
                     <!-- <legend class="fieldset-legend">Login</legend> -->
                     <p class="text-lg font-semibold">Select Bank</p>
-                    <select class="select appearance-none w-full rounded-full">
+                    <select id="pay-bank-select" class="select appearance-none w-full rounded-full">
                         <option disabled selected>Select Bank</option>
                         <option>DBBL</option>
                         <option>UCB</option>
@@ -299,20 +300,20 @@
                         <option>IBBL</option>
                     </select>
                     <label class="label font-extrabold pt-[20px] text-lg">Biller Account Number</label>
-                    <input id="input-account" type="text" maxlength="11" minlength="11"
-                        class="input rounded-full w-[350px]" placeholder="Your 11 Digit Phone Number" />
+                    <input id="biller-account" type="text" maxlength="11" minlength="11"
+                        class="input rounded-full w-[350px]" placeholder="11 Digit Biller Account Number" />
 
                     <label class="label font-extrabold pt-[20px] text-lg">Amount to Pay</label>
-                    <input id="input-amount" type="text" maxlength="11" minlength="11"
-                        class="input rounded-full w-[350px]" placeholder="Your 11 Digit Phone Number" />
+                    <input id="input-bill-amount" type="text" maxlength="11" minlength="11"
+                        class="input rounded-full w-[350px]" placeholder="Your bill amount" />
                     <br>
 
 
                     <label class="label font-extrabold text-lg">Pin Number</label>
-                    <input id="input-pin" type="password" maxlength="4" minlength="4"
+                    <input id="input-bill-pin" type="password" maxlength="4" minlength="4"
                         class="input rounded-full w-[350px]" placeholder="Your 4 Degit pin" />
 
-                    <button id="login" class="btn btn-primary rounded-full mt-4">Pay Now</button>
+                    <button id="pay-bills-btn" class="btn btn-primary rounded-full mt-4">Pay Now</button>
                 </fieldset>
             </div>
         </div>
@@ -337,14 +338,14 @@
                     
                   
                     <label class="label font-extrabold pt-[20px] text-lg">Enter Bonus Coupon</label>
-                    <input id="input-agent" type="text" maxlength="11" minlength="11"
+                    <input id="input-coupon" type="text" maxlength="11" minlength="11"
                         class="input rounded-full w-[350px]" placeholder="Enter your bonus coupon" />
 
             
 
 
 
-                    <button id="login" class="btn btn-primary rounded-full mt-4">Get Bonus</button>
+                    <button id="get-bonus-btn" class="btn btn-primary rounded-full mt-4">Get Bonus</button>
                 </fieldset>
             </div>
         </div>
